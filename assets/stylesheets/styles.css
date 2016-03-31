@@ -1,0 +1,192 @@
+body {
+	background: 
+		url(../images/night_tree.jpeg) 
+		no-repeat center center fixed;
+	background-size: cover;
+	background-color: #cccccc;
+}
+
+#icon {
+	width: 40px;
+	height: 49px;
+	border-radius: 50px;
+}
+
+.navbar {
+	margin-right: -10%;
+	margin-left: -10%;
+	margin-bottom: -8%;
+	margin-top: 5%;
+	background-color: transparent;
+	border: none;
+}
+
+.navbar-brand {
+	padding: 1px 9px;
+}
+
+/*h1 {
+	font-size: 4.5em;
+	background-color: #ccc;
+	right-margin: auto;
+	left-margin: auto;
+	padding: 20px;
+	text-align: center;
+	border-radius: 15px;
+	background:
+		url(../images/space_patio.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}*/
+
+.jumbotron {
+	text-align: center;
+	color: white;
+	background:
+		url(../images/space_patio.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+h2, h3 {
+	text-align: center;
+}
+
+.well {
+	opacity: .6;
+	size: 293.328px 723px;
+}
+
+.well p {
+	font-weight: bold;
+	color: black;
+}
+
+.video {
+	opacity: 1;
+}
+
+.futurism:hover {
+	background: 
+		url(../images/futurism.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 1;
+	transform: translateY(4px);
+}
+
+.bio:hover {
+	background: 
+		url(../images/like_a_sir.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 1;
+	transform: translateY(4px);
+}
+
+/*.background {
+	border: 2% solid black;
+}
+
+.transbox {
+	margin: 5%;
+	background: rgba(255,255,255,0.6);
+	border-radius: 10px;
+	background-color: #ffffff;
+	border: 1px solid black;
+	opacity: 0.6;
+}
+
+.transbox p {
+	right-margin: 5%;
+	left-margin: 5%;
+	right-padding: 20px;
+	left-padding: 20px;
+	color: #000000;
+}*/
+
+#profile {
+
+}
+
+/*div {
+	position: relative;
+	border: 2px solid black;
+	margin: 50px;
+	padding: 30px;
+	height: 75%;
+	/*height: 1920px 1080px;
+	background-color: gray;
+	background-opacity: .5;
+}*/
+
+/*p {
+	position: absolute;
+	top: 75px;
+	right: 25%;
+	left: 25%;
+	/*width: 400px
+	text-align: center;
+	color: blue;*/
+}
+
+/*
+#blogbox {
+	text-align: center;
+	width: 500px;
+}
+*/
+
+button.button {
+/*	position: absolute;
+*/  bottom: .5%;
+		margin: 2%;
+
+/*	margin-right: 25%;
+	margin-left: 25%;	*/
+}
+
+a {
+	color: gray;
+}
+.button {
+	padding: 15px 25px;
+	font-size: 18px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: #000000;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+}
+
+.button:hover {
+	background-image: url(../images/night_tree.jpeg)}
+
+.button:active {
+	background-color: yellow;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#cards {
+
+}
+
+footer {
+	/*height: 20px;*/
+	background-color: transparent;
+	border: 5px solid #000000;
+	padding: 30px;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+	margin-bottom: -15px;
+/*	font: 12px white;*/
+}
+
+.m-top-15 {
+	margin-top: -20px;
+}
