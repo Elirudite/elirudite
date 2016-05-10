@@ -175,6 +175,11 @@ a {
 
 }
 
+#footer {
+	/*Something here to make the footer (particularly on the About page) 
+	go to the bottom of the screen */
+}
+
 footer {
 	/*height: 20px;*/
 	background-color: transparent;
