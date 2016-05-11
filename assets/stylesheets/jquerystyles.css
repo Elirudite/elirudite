@@ -1,0 +1,26 @@
+.red-square {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+}
+
+#green-circle, .draggable, .shapes {
+height: 100px;
+width: 100px;
+border-radius: 50%;
+background-color: green;
+}
+
+.button {
+background-color: #4CAF50;
+color: black;
+text-decoration: none;
+}
+
+#shape1 {
+	-webkit-clip-path: polygon( 30% 40%, 50% 60%, 60% 40% );
+}
+
+#shape2 {
+  -webkit-clip-path: polygon( 30% 40%, 50% 60%, 60% 40%, 80% 100% );
+}

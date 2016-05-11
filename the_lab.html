@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Lab</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/jquerystyles.css">
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 cold-md-offset-4">
+			<div class="well class2">
+				<h1>Welcome to my jQuery lab.. it aint purty!</h1>
+			</div>
+
+			<button class="button"><a href="index.html">Go Home!</a></button>
+
+			<br>
+
+			<div class="well">
+				<div class="red-square"></div>
+			</div>
+
+			<div class="well">
+				<p id="changeling">This is a sentence!</p>
+			</div>
+
+			<div class="well">
+				<div id="green-circle"></div>
+			</div>
+
+		</div>
+	</div>
+
+	<br>
+
+	<div class="well">
+		<div class="draggable ui-widget-content">
+			<p>Drag me 'round pleash!</p>
+		</div>
+	</div>
+
+	<button onclick="createShape()" id="shapeCreator"> Make some shapes! </button>
+
+	<div id="spawnPoint"></div>
+
+	<div class="draggable shapes"  id="shape1"></div>
+
+	<div class="draggable shapes"  id="shape2"></div>
+
+	<button class="button"><a href="blob.html">(not jQuery but) Check out this blob!</a></button>
+
+	<h2>HERE BE jCanvas!!</h2>
+
+	<div id="canvases">
+	<canvas id="polygons" width="500" height="200"></canvas>
+	<canvas id="second" width="500" height="200"></canvas>
+	</div>
+
+</div>
+
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.4.1/jcanvas.min.js"></script>
+  <script src="http://projects.calebevans.me/jcanvas/resources/jcanvas/plugins/jcanvas-handles.min.js"></script>
+
+	<script type="text/javascript" src="assets/javascripts/jqueryscript.js"></script>
+	<script type="text/javascript" src=""></script>
+</body>
+</html>
