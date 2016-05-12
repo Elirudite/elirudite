@@ -17,14 +17,44 @@ $(function() {
 	$('.draggable').draggable();
 })
 
+// // Stack Overflow solution: https://stackoverflow.com/questions/14032568/create-a-div-next-to-the-cursor-position-on-click/14032652#14032652
+// $(function(){
+//     $(document).click(function(e){
+//         var x = e.pageX + 'px';
+//         var y = e.pageY + 'px';
+//         var shape = $('#shape1');
+//         var div = $('<div>').css({
+//             "position": "absolute",                    
+//             "left": x,
+//             "top": y
+//         });
+//         div.append(shape);
+//         $(document.body).append(div);        
+//     });
+// });
 
-// w3 schools solution
-function createShape() {
-	var elmnt = document.getElementsByTagName("DIV")[2];
-	var cln = elmnt.cloneNode(true);
-	document.body.appendChild(cln);
-	cln = '.draggable'
-}
+// // w3 schools solution
+// function createShape() {
+// 	var elmnt = document.getElementsByTagName("DIV")[0];
+// 	var cln = elmnt.cloneNode(true);
+// 	document.body.appendChild(cln);
+// 	cln = '.draggable'
+// }
+
+
+// Another Stack Overflow solution (better): http://stackoverflow.com/questions/2458817/jquery-ui-drag-and-clone-from-original-div-but-keep-clones
+$(".shapeclone").live('mouseover', function() {
+    $(this).draggable({ 
+        containment: 'html'
+    });
+});
+$("#shape1, #shape2").draggable({ 
+    containment: 'html',
+    helper: 'clone',
+    stop: function(event, ui) {
+        $(ui.helper).clone(true).addClass('shapeclone').appendTo('body');
+    }
+});
 
 // Tried to create a function myself, failed...
 // $("button").click(function(){
@@ -63,7 +93,7 @@ $('#polygons')
 });
 
 // Add rectangle layer w/o drawing
-$('#second').addLayer({
+$('#resizable').addLayer({
   type: 'rectangle',
   draggable: true,
   fillStyle: '#fff',
