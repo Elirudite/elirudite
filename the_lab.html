@@ -49,9 +49,17 @@
 
 	<div id="spawnPoint"></div>
 
-	<div class="draggable shapes"  id="shape1"></div>
+	<div class="user-shape"  id="shape1"></div>
 
 	<div class="draggable shapes"  id="shape2"></div>
+
+	Note: clip path seems to only work if another class is set 'behind' it... ie it is more a cropping tool rather than a creation tool. So you can create shape, but only because it is clip/cropping a default shape/picture.
+
+	<div class="triangle"></div>
+
+	<div class="buildershape"></div>
+
+	Note: the above *might* work if I make all clip-path polygons within a canvass that doubles as the basic shape/picture to clipped...  then make the clip-path class/fill a different color than the background... 
 
 	<button class="button"><a href="blob.html">(not jQuery but) Check out Hakim's Blob!</a></button>
 

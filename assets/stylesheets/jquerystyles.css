@@ -23,13 +23,32 @@
 }
 
 #shape2 {
-  -webkit-clip-path: polygon( 30% 40%, 50% 60%, 60% 40%, 45% 20% );
+	-webkit-clip-path: polygon( 30% 40%, 50% 60%, 60% 40%, 45% 20% );
+}
+
+.buildershape {
+	clip-path: polygon(50px 0px, 100px 100px, 0px 100px);
+	-webkit-clip-path: polygon(50px 0px, 100px 100px, 0px 100px);
 }
 
 canvas {
-  border: 2px solid blue;
+	border: 2px solid blue;
 }
 
 #canvases {
 	border: 2px solid red;
+}
+
+.user-shape {
+	height: 100px;
+	width: 100px;
+	background-color: blue;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 140px solid #fcf921;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
 }

@@ -42,17 +42,17 @@ $(function() {
 // }
 
 
-// Another Stack Overflow solution (better): http://stackoverflow.com/questions/2458817/jquery-ui-drag-and-clone-from-original-div-but-keep-clones
-$(".shapeclone").live('mouseover', function() {
+// A better Stack Overflow solution: http://stackoverflow.com/questions/2458817/jquery-ui-drag-and-clone-from-original-div-but-keep-clones
+$(".shape-clone").live('mouseover', function() {
     $(this).draggable({ 
         containment: 'html'
     });
 });
-$("#shape1, #shape2").draggable({ 
+$("#shape1, #shape2, .triangle").draggable({ 
     containment: 'html',
     helper: 'clone',
     stop: function(event, ui) {
-        $(ui.helper).clone(true).addClass('shapeclone').appendTo('body');
+        $(ui.helper).clone(true).addClass('shape-clone').appendTo('body');
     }
 });
 
