@@ -24,7 +24,9 @@ canvas {
   border: 20px red;
 }
 
-button {
+button :first-child {
   color: black;
   text-decoration: none;
 }
+
+

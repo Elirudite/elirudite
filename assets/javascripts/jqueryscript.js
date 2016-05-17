@@ -67,10 +67,28 @@ $("#shape1, #shape2, .triangle").draggable({
 // } 
 
 
+// $("button").click(function(){
+//   var shapePosition = $(".shape-clone").position();
+//   alert("X:" + shapePosition.left + " Y:" + shapePosition.top);
+// });
 
 
+$("#dragcircle").mouseup(function(){
+var shapePosition = $("#dragcircle").offset();
+$("#x-coord").text(shapePosition.left);
+$("#y-coord").text(shapePosition.top);
+});
 
-
+var value = 0
+$("#triangle").rotate({ 
+  bind: 
+    { 
+      click: function(){
+        value +=90;
+        $(this).rotate({ animateTo:value})
+      }
+    } 
+});
 
 // HERE BE jCanvas!!!
 
