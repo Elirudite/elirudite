@@ -31,6 +31,10 @@
 	-webkit-clip-path: polygon(50px 0px, 100px 100px, 0px 100px);
 }
 
+.spawnbox {
+	width: 200px;
+}
+
 canvas {
 	border: 2px solid blue;
 }
@@ -46,9 +50,15 @@ canvas {
 }
 
 .triangle, #triangle {
+	position: relative;
   width: 0;
   height: 0;
   border-bottom: 140px solid #fcf921;
   border-left: 70px solid transparent;
   border-right: 70px solid transparent;
+}
+
+#lab {
+	background-color: tomato;
+	opacity: .9;
 }

@@ -44,9 +44,22 @@ $(function() {
 
 // A better Stack Overflow solution: http://stackoverflow.com/questions/2458817/jquery-ui-drag-and-clone-from-original-div-but-keep-clones
 $(".shape-clone").live('mouseover', function() {
-    $(this).draggable({ 
-        containment: 'html'
-    });
+  var value = 0
+  $(".shape-clone").rotate({ 
+    bind: 
+      { 
+        dblclick: function(){
+          value +=90;
+          $(this).rotate({ animateTo:value})
+        }
+      } 
+  });
+  $(".shape-clone").mouseup(function(){
+  var shapePosition = $(".shape-clone").offset();
+  });
+  $(this).draggable({ 
+      containment: 'html'
+  });
 });
 $("#shape1, #shape2, .triangle").draggable({ 
     containment: 'html',
@@ -111,7 +124,7 @@ $('#polygons')
 });
 
 // Add rectangle layer w/o drawing
-$('#resizable').addLayer({
+$('.resizable').addLayer({
   type: 'rectangle',
   draggable: true,
   fillStyle: '#fff',

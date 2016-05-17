@@ -48,6 +48,11 @@ body {
 	background-repeat: no-repeat;
 }
 
+.jumbotron .lab {
+	font: bold;
+
+}
+
 h2, h3 {
 	text-align: center;
 }
