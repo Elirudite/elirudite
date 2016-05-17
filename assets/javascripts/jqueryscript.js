@@ -9,7 +9,7 @@ $(".red-square").click(function (){
 });
 
 $(".red-square").hover(function (){
-	$(this).css('width', 400);
+	$(this).css('width', 1125);
 });
 
 
