@@ -62,3 +62,12 @@ canvas {
 	background-color: tomato;
 	opacity: .9;
 }
+
+.marker {
+	position: relative;
+  width: 0;
+  height: 0;
+  border-bottom: 140px solid #21fcb4;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+}

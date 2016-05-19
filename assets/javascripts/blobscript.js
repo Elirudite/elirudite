@@ -35,7 +35,7 @@ BlobWorld = new function() {
   var skins = [
        { fillStyle: 'rgba(0,200,250,1.0)', strokeStyle: '#ffffff', lineWidth: 5, debug: false },
        { fillStyle: '', strokeStyle: '', lineWidth: 0, debug: true },
-     { fillStyle: 'rgba(0,0,0,0.1)', strokeStyle: 'rgba(255,255,255,1.0)', lineWidth: 6, debug: false },
+       { fillStyle: 'rgba(0,0,0,0.1)', strokeStyle: 'rgba(255,255,255,1.0)', lineWidth: 6, debug: false },
        { fillStyle: 'rgba(0,230,110,1.0)', strokeStyle: 'rgba(0,0,0,1.0)', lineWidth: 2, debug: false },
        { fillStyle: 'rgba(255,255,0,1.0)', strokeStyle: 'rgba(0,0,0,1.0)', lineWidth: 4, debug: false },
        { fillStyle: 'rgba(255,255,255,1.0)', strokeStyle: 'rgba(0,0,0,1.0)', lineWidth: 4, debug: false }
