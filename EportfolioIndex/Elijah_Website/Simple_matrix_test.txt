@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			body
+			{
+			background-image: url("Images/erudite.jpeg");
+			background-size: 40px 40px;
+			background-position: top center;
+			background-repeat: no-repeat;
+			animation:mymove 5s infinite;
+			-webkit-animation:mymove 5s infinite;
+			}
+
+			@keyframes mymove
+			{
+			100% {background-position:center;}
+			}
+			@-webkit-keyframes mymove
+			{
+			/*from {top:0px;}
+			to {top:200px;}*/
+			100% {background-position:center;}
+			}
+		</style>
+	</head>
+	<body>
+		<h1> Erudite Matrix Simple Code! </h1>
+		<p>
+			Cool matrix code or nah?
+			blah blah blah
+			<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+		</p>
+	</body>
+</html>

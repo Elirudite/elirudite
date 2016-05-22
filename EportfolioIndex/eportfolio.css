@@ -1,0 +1,209 @@
+html {
+	background: url("Images/space-sunrise.jpg") no-repeat center center fixed;
+	background-size:cover;
+	-webkit-background-size:cover;
+}
+
+html {
+	animation: bgchange 120s ease-out;
+	-webkit-animation: bgchange 120s ease-out reverse;	
+}
+@-webkit-keyframes bgchange {
+	0% {background: url("Images/imaginationbg.jpg");}
+	50% {background: url("Images/imaginationbg.jpg");}
+	
+	75% {background: url("Images/imaginationspace.jpg");}
+	100% {background: url("Images/imagination-NO-limits.jpg");}
+}
+@keyframes bgchange {
+	0% {background: url("Images/imaginationbg.jpg");}
+	25% {background: url("Images/space-wallpaper.jpg");}
+	
+	75% {background: url("Images/imaginationspace.jpg");}
+	100% {background: url("Images/imagination-NO-limits.jpg");}
+}
+body {
+	background-size: cover;
+	margin:0;
+	bacground-color:#000000; /*black*/
+}
+h1:hover {
+	opacity:1;
+}
+h1 {
+	font-family:"Georgia", serif;
+	color:Blue;
+	text-align:center;
+	font-size: 75px;
+	margin-bottom:20px;
+	margin-top:0px;
+	Padding:10px; 
+	border-radius:75px; 
+	border:10px solid blue; opacity:0.5;	
+}
+p {
+	text-align:center;
+	color:Gray;
+	opacity:1
+}
+/*a:link {
+	width:100; 
+	height:100; 
+	frameborder:0; 
+	scrolling:no;
+	margin:5;
+}
+iframe {
+	position:relative;
+	margin:auto;
+	width:50%;
+	frameborder:0;
+} iframes don't work too well soooo...bye*/
+
+#nav ul {
+	background:#FFFF00;
+	background:rgba(255,255,255,0);
+	list-style-type:none;
+	position: absolute;
+	left:-9999px;
+	
+} 
+#nav ul li {
+	padding-top:1px;
+	float:none;	
+}
+#nav ul a {
+	white-space:nowrap;
+}
+#nav li:hover ul {
+	/*position:absolute;*/
+	left:0;
+}
+#nav li:hover a {
+	background:#000000;/*black*/
+	text-decoration:underline;
+	z-index:10;
+}
+#nav li:hover ul a {
+	text-decoration:none;
+	-webkit-transition: -webkit-transform 0.75s linear;
+	z-index:10;
+}
+#nav li:hover ul li a:hover {
+	background:#000000;
+	z-index:10;
+}
+
+nav ul {
+	list-style-type:none;
+	position:fixed;
+	margin: 0 auto;
+	margin-right:12.5%;
+	margin-left:12.5%;
+	width:75%
+	padding:0;
+	opacity:0.75;
+}
+
+nav ul li {
+	float:left;
+	position: relative;
+}
+li {
+	
+	/*left:20%
+	right:-20%*/
+	width:auto;
+	border-style:groove;
+	border-width:thick;
+	border-color:blue;
+}
+
+a:link, a:visited {
+	display: block;
+	/*width: 150px;*/
+	font-weight: bold;
+	color:#0000FF; /*blue*/
+	background-color:#FFFF00; /*yellow*/
+	text-align: center;
+	padding: 5px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+a:hover, a:active {
+	background-color:#000000;/*black*/
+	opacity:0.5; 
+}
+a.email:link, a.email:visited, {
+	display: inline;
+	position: bottom;
+	text-transform: none;
+	padding: 0;
+	background: 5
+	opacity:0.5;
+}
+
+#content {
+	display:block;
+	margin: 0 auto;
+	color:#FFFF00; /*yellow*/
+	position: fixed;
+}
+
+footer {
+	text-color:#FFFFFF; /*gray*/
+	position:relative;
+	top: -80%
+	background:#000000; /*black*/
+	width: 1000px;
+	height: 200px;
+	border:black;
+	z-index:4
+} /*Divs just want to be difficult...*/
+#footerquote {
+	text-color:#0000FF; /*blue*/
+}
+/* code for image sprites for navlist
+#homeicon {
+	position: relative;
+}
+
+#homeicon li {
+	margin:0;
+	padding:0;
+	list-style: none;
+	position: absolute;
+	top:0;
+	background-color: blue;
+}
+
+#homeicon li, #homeicon a {
+	height: 50px;
+	display: block;
+}
+
+#home {
+	position:relative;
+	left:0px;
+	width:50px;
+	background: url("Images/home.jpg") 0 0;
+	z-index:5
+} */
+a.hmeicn {
+	background-color:transparent;
+	position:absolute;
+	left:2%;
+	margin:0px;
+	padding:0;
+	z-index:9;
+}
+
+
+a.twitter-follow-button {
+	position:absolute;
+	left:98%;
+	margin:0px;
+	padding:0;
+	
+}	

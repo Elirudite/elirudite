@@ -1,0 +1,50 @@
+h1 {
+	color:Purple;
+	text-align:center;
+}
+p {
+	color: Purple;
+	text-align:center;
+	font: times new roman;
+}
+body {
+	background-color: Navy;
+	background-image: url("Images/Erudite_bg_pic.gif");id="full-size";
+	background-repeat:no-repeat;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li {
+    float: left;
+}
+a:link, a:visited {
+    	display: block;
+    	width: 100px;
+    	font-weight: bold;
+    	color: Purple;
+    	background-color: #FFD700;
+    	text-align: center;
+    	padding: 5px;
+    	text-decoration: none;
+    	text-transform: uppercase;
+}
+a:hover, a:active {
+	background-color: Navy;
+}
+#ref1 {
+	display:inline;
+	width: 0;
+	background-color: transparent;
+	padding: 0;
+	float:center;
+	text-decoration: none;
+	text-transform: none;
+}
+#ref1.a:hover, a:active {
+	text-font: red;
+	font-color: red;
+}

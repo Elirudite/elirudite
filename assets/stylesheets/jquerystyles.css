@@ -56,6 +56,7 @@ canvas {
   border-bottom: 140px solid #fcf921;
   border-left: 70px solid transparent;
   border-right: 70px solid transparent;
+  color: blue;
 }
 
 #lab {
@@ -70,4 +71,8 @@ canvas {
   border-bottom: 140px solid #21fcb4;
   border-left: 70px solid transparent;
   border-right: 70px solid transparent;
+}
+
+#highlight {
+
 }

@@ -83,7 +83,7 @@ $(".shape-clone").live('mouseover', function() {
       containment: 'html'
   });
 });
-$(".triangle").draggable({ 
+$(".triangle, #shape1, #shape2").draggable({ 
     containment: 'html',
     helper: 'clone',
     stop: function(event, ui) {
@@ -179,3 +179,15 @@ $('.resizable').addLayer({
   }
 })
 .drawLayers();
+
+function snap(value, gridSize, roundFunction) {
+    if (roundFunction === undefined) roundFunction = Math.round;
+    return gridSize * roundFunction(value / gridSize);
+}
+
+alert(snap(14, 10));
+alert(snap(16, 10));
+
+$("shape-clone").click(function() {
+  $("")
+}
