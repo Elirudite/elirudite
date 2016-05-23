@@ -12,8 +12,9 @@ $(".red-square").hover(function (){
 	$(this).css('width', 1125);
 });
 
+// The below are my attemtps at creating/finding a way to clone elements...
 
-// // Stack Overflow solution: https://stackoverflow.com/questions/14032568/create-a-div-next-to-the-cursor-position-on-click/14032652#14032652
+// Stack Overflow solution: https://stackoverflow.com/questions/14032568/create-a-div-next-to-the-cursor-position-on-click/14032652#14032652
 // $(function(){
 //     $(document).click(function(e){
 //         var x = e.pageX + 'px';
@@ -179,15 +180,3 @@ $('.resizable').addLayer({
   }
 })
 .drawLayers();
-
-// function snap(value, gridSize, roundFunction) {
-//     if (roundFunction === undefined) roundFunction = Math.round;
-//     return gridSize * roundFunction(value / gridSize);
-// }
-
-// alert(snap(14, 10));
-// alert(snap(16, 10));
-
-// $("shape-clone").click(function() {
-//   $("")
-// });
