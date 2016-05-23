@@ -190,4 +190,4 @@ $('.resizable').addLayer({
 
 // $("shape-clone").click(function() {
 //   $("")
-// }
+// });
