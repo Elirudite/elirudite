@@ -110,7 +110,7 @@ function moreShapes() {
     draggable: true,
     bringToFront: true,
     strokeStyle: '#c33',
-    strokeWidth: 2,
+    strokeWidth: 1,
     closed: true,
     rounded: true,
     x1: 100, y1: 50,
@@ -125,8 +125,8 @@ function moreShapes() {
       type: 'arc',
       fillStyle: '#fff',
       strokeStyle: '#c33',
-      strokeWidth: .5,
-      radius: 5
+      strokeWidth: 1,
+      radius: 10
     }
   })
   .drawLayers();
@@ -180,14 +180,14 @@ $('.resizable').addLayer({
 })
 .drawLayers();
 
-function snap(value, gridSize, roundFunction) {
-    if (roundFunction === undefined) roundFunction = Math.round;
-    return gridSize * roundFunction(value / gridSize);
-}
+// function snap(value, gridSize, roundFunction) {
+//     if (roundFunction === undefined) roundFunction = Math.round;
+//     return gridSize * roundFunction(value / gridSize);
+// }
 
-alert(snap(14, 10));
-alert(snap(16, 10));
+// alert(snap(14, 10));
+// alert(snap(16, 10));
 
-$("shape-clone").click(function() {
-  $("")
-}
+// $("shape-clone").click(function() {
+//   $("")
+// }
