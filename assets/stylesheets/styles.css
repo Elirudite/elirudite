@@ -201,3 +201,10 @@ footer {
 .m-top-15 {
 	margin-top: -20px;
 }
+
+.videobox {
+	height: 500px;
+	width: 500px;
+	border-radius: 50;
+	border-color: blue;
+}

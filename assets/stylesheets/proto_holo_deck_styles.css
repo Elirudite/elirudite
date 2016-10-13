@@ -1,0 +1,207 @@
+/*
+----------------------------------------------
+Holodeck with 3 walls
+----------------------------------------------
+*/
+
+.holodeck-box2 {
+/*	background: 
+		url(../images/possiblebg2.jpg)
+		no-repeat center center;
+	background-size: 100% 100%;*/
+	background-color: navy;
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(0% 0%, 30% 25%, 70% 25%, 100% 0%, 100% 100%, 80% 80%, 80% 58.5%, 75% 60%, 75% 75%, 70% 70%, 30% 70%, 0% 100%);
+}
+.holodeck-box2-border {
+	z-index: 9990;
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(30% 25%, 30% 70%, 70% 70%, 70% 25%, 69.9% 25%, 69.9% 70%, 30.1% 70%, 30.1% 25%);
+	position: absolute;
+	top: 0%;
+}
+.holodeck-box2-left-wall {
+	background: 
+		url(../images/possiblebg2.jpg)
+		no-repeat;
+	background-size: 50% 75%;
+	background-color: green;
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(5% 25%, 25% 32%, 25% 62%, 5% 75%);
+}
+.holodeck-box2-middle-wall {
+	background: 
+		url(../images/research_lab.png)
+		no-repeat;
+	background-size: 50% 50%;
+	background-color: red;
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(35% 33%, 65% 33%, 65% 61%, 35% 61%);
+	position: absolute;
+	top: 0%;
+}
+
+.holodeck-box2-floor {
+	z-index: 9999;
+	background-color: black; 
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(0% 100%, 30% 70%, 70% 70%, 75% 75%, 75% 70%, 80% 70%, 80% 80%, 100% 100%);
+	position: absolute;
+	top: 0%;
+}
+.holodeck-box2-sky {
+	background-image: url(../images/starsmovingsimple.gif);
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	/*-webkit-clip-path: polygon(0% 100%, 30% 70%, 70% 70%);*/
+}
+
+/*
+----------------------------------------------
+Holodeck with 4-5 walls
+----------------------------------------------
+*/
+
+.holodeck-box3 {
+	/*background: 
+		url(../images/utopian_city.jpg)
+		no-repeat center center;
+	background-size: 100% 100%;*/
+	background-color: navy;
+	width: 100%;
+	height: 100%;
+	/*-webkit-clip-path: polygon(0% 10%, 30% 20%, 60% 20%, 90% 10%, 98% 0%, 100% 0%, 100% 100%, 98% 100%, 90% 70%, 
+		80% 66.3%, 80% 30%, 70% 30%, 70% 62.7%, 60% 60%, 30% 60%, 0% 70%);*/
+-webkit-clip-path: polygon(0% 0%, .5% 0%, 5% 10%, 30% 20%, 65% 20%, 90% 10%, 98% 0%, 100% 0%, 100% 100%, 98% 100%, 90% 70%, 
+		80% 66.3%, 80% 30%, 70% 30%, 70% 62.7%, 65% 60%, 30% 60%, 5% 70%, .5% 100%, 0% 100%);
+	position: absolute;
+	top: 100%;
+}
+.holodeck-box3-border {
+	z-index: 9999;
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	/*-webkit-clip-path: polygon(30% 20%, 30% 60%, 60% 60%, 60% 20%, 59.9% 20%, 59.9% 60%, 60% 60%, 70% 62.7%, 
+		71% 62.7%, 71% 30.5%, 80% 30.5%, 80% 30%, 70% 30%, 70% 62.7%, 80% 66.3%, 90% 70%, 90.1% 70.1%, 90.1% 9.9%, 
+		90% 10%, 90% 70%, 90.1% 70.1%, 90% 70%, 80% 66.3%, 70% 62.7%, 60% 60%, 30% 60%, 30.1% 60%, 30.1% 20%);*/
+	-webkit-clip-path: polygon(5% 10%, 30% 20%, 30% 60%, 65% 60%, 65% 20%, 64.9% 20%, 64.9% 60%, 65% 60%, 70% 62.7%, 
+		71% 62.7%, 71% 30.5%, 80% 30.5%, 80% 30%, 70% 30%, 70% 62.7%, 80% 66.3%, 90% 70%, 90.1% 70.1%, 90.1% 9.9%, 
+		90% 10%, 90% 70%, 90.1% 70.1%, 90% 70%, 80% 66.3%, 70% 62.7%, 65% 60%, 30% 60%, 30.1% 60%, 30.1% 20%, 30% 20%, 
+		5% 10%, 5% 70%, 5.1% 69.9%, 5.1% 10.1%);
+	position: absolute;
+	top: 100%;
+}
+.holodeck-box3-left-window {
+	background: 
+		url(../images/possiblebg2.jpg)
+		no-repeat;
+	background-size: 100% 100%;
+	background-color: green;
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(10% 20%, 25% 30%, 25% 62%, 5% 75%);
+}
+.holodeck-box3-middle-window {
+	/*z-index: -9999;
+	background: 
+		url(../images/research_lab.png)
+		no-repeat;
+	background-size: 50% 50%;
+	background-color: red;
+	width: 100%;
+	height: 100%;
+	/*-webkit-clip-path: polygon(35% 33%, 65% 33%, 65% 61%, 35% 61%);*/
+	position: absolute;
+	top: 100%;
+}
+
+.holodeck-box3-floor {
+	z-index: 9990;
+	background-color: beige;
+	width: 100%;
+	height: 100%;
+	/*-webkit-clip-path: polygon(0% 100%, 0% 70%, 30% 60%, 60% 60%, 70% 62.7%, 70% 60%, 80% 60%, 80% 66.3%, 90% 70%, 98% 100%, 100% 100%);*/
+	-webkit-clip-path: polygon(0% 100%, 5% 70%, 30% 60%, 65% 60%, 70% 62.7%, 70% 60%, 80% 60%, 80% 66.3%, 90% 70%, 98% 100%, 100% 100%);
+	position: absolute;
+	top: 100%;
+}
+.holodeck-box3-sky {
+	background-image: url(../images/starsmovingsimple.gif);
+	background-color: black;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------------------------
+Extra code below... may throw away... 
+These were all prior attempts to achieve the above result :D 
+--------------------------------------------------------------------------------------------------
+*/
+
+.holodeck {
+	width: 100%;
+	height: 100%;
+	/*background-color: black;*/
+}
+
+.wall {
+	border-width: 5px;
+	border: black;
+}
+
+#right-wall {
+	background-color: red;
+	height: 400px;
+}
+#middle-wall {
+	background-color: green;
+	height: 400px;
+}
+#left-wall {
+	background-color: blue;
+	height: 400px;
+}
+#cieling {
+	background-color: yellow;
+	height: 200px;
+
+}
+#floor {
+	background-color: brown;
+	height: 400px;
+
+}
+
+
+.left-square {
+	height: 400px;
+	width: 400px;
+	/*vertical-align: 25%;*/
+	/*float: left;*/
+	background-color: red;
+}
+.middle-square {
+	height: 400px;
+	width: 400px;
+	/*vertical-align: 25%;*/
+	/*vertical-align: center;*/
+	background-color: green;
+}
+.right-square {
+	height: 400px;
+	width: 400px;
+	/*vertical-align: 25%;*/
+	/*float: right;*/
+	background-color: blue;
+}
