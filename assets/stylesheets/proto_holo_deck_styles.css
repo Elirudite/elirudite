@@ -35,9 +35,9 @@ Holodeck with 3 walls
 }
 .holodeck-box2-middle-wall {
 	background: 
-		url(../images/research_lab.png)
+		url(../images/space_patio.jpg)
 		no-repeat;
-	background-size: 50% 50%;
+	background-size: 95% 80%;
 	background-color: red;
 	width: 100%;
 	height: 100%;
@@ -107,7 +107,7 @@ Holodeck with 4-5 walls
 	background-color: green;
 	width: 100%;
 	height: 100%;
-	-webkit-clip-path: polygon(10% 20%, 25% 30%, 25% 62%, 5% 75%);
+	-webkit-clip-path: polygon(10% 20%, 25% 25%, 25% 57%, 10% 62%);
 }
 .holodeck-box3-middle-window {
 	/*z-index: -9999;
@@ -145,7 +145,7 @@ Holodeck with 4-5 walls
 /*
 --------------------------------------------------------------------------------------------------
 Extra code below... may throw away... 
-These were all prior attempts to achieve the above result :D 
+These were all prior attempts to achieve the above result(s) :D 
 --------------------------------------------------------------------------------------------------
 */
 

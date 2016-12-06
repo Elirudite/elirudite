@@ -3,8 +3,11 @@
 	<title>Elijah's Holodeck Prototype</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/jquerystyles.css">
 	<link rel="stylesheet" type="text/css" href="assets/stylesheets/proto_holo_deck_styles.css">
 
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
 
@@ -25,30 +28,37 @@
 	<div class="holodeck-box3-middle-window"></div>
 	<div class="holodeck-box3-border"></div>
 	<div class="holodeck-box3-floor"></div>
+	<button onClick="moreShapes()">Create Shapes</button>
+	<div id="canvases">
+		<canvas id="customtriangle" width="1000" height="500"></canvas>
+	</div>
 
 	<!-- <div class="holodeck">
 
-		<div class="wall col-md-12" id="cieling"> 
+		<div class="wall col-md-12" id="cieling"> </div>
 
-		</div>
+		<div class="wall col-md-4" id="left-wall"> </div>
 
-		<div class="wall col-md-4" id="left-wall">
+		<div class="wall col-md-4" id="middle-wall"> </div>
 
-		</div>
+		<div class="wall col-md-4" id="right-wall"> </div>
 
-		<div class="wall col-md-4" id="middle-wall">
-
-		</div>
-
-		<div class="wall col-md-4" id="right-wall">
-
-		</div>
-
-		<div class="wall col-md-12" id="floor">
-
-		</div>
+		<div class="wall col-md-12" id="floor"> </div>
 
 	</div> -->
 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.4.1/jcanvas.min.js"></script>
+  <script src="http://projects.calebevans.me/jcanvas/resources/jcanvas/plugins/jcanvas-handles.min.js"></script>
+  <script src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PhysicsJS/0.7.0/physicsjs-full.min.js"></script>
+
+	<script type="text/javascript" src="assets/javascripts/jqueryscript.js"></script>
 </body>
 </html>

@@ -1,0 +1,856 @@
+rvm path : source /usr/local/rvm/scripts/rvm
+
+*************************************************************************************(( press a key to review the .rvmrc file ))
+#!/usr/bin/env bash^M
+^M
+# This is an RVM Project .rvmrc file, used to automatically load the ruby^M
+# development environment upon cd'ing into the directory^M
+^M
+# First we specify our desired <ruby>[@<gemset>], the @gemset name is optional,^M
+# Only full ruby name is supported here, for short names use:^M
+#     echo "rvm use 2.0.0" > .rvmrc^M
+environment_id="ruby-2.0.0-p643@employee"^M
+^M
+# Uncomment the following lines if you want to verify rvm version per project^M
+# rvmrc_rvm_version="1.26.11 (master)" # 1.10.1 seems like a safe start^M
+# eval "$(echo ${rvm_version}.${rvmrc_rvm_version} | __rvm_awk -F. '{print "[[ "$1*65536+$2*256+$3" -ge "$4*65536+$5*256+$6" ]]"}' )" || {^M
+#   echo "This .rvmrc file requires at least RVM ${rvmrc_rvm_version}, aborting loading."^M
+#   return 1^M
+# }^M
+^M
+# First we attempt to load the desired environment directly from the environment^M
+# file. This is very fast and efficient compared to running through the entire^M
+# CLI and selector. If you want feedback on which environment was used then^M
+# insert the word 'use' after --create as this triggers verbose mode.^M
+if [[ -d "${rvm_path:-$HOME/.rvm}/environments"^M
+  && -s "${rvm_path:-$HOME/.rvm}/environments/$environment_id" ]]^M
+then^M
+  \. "${rvm_path:-$HOME/.rvm}/environments/$environment_id"^M
+  for __hook in "${rvm_path:-$HOME/.rvm}/hooks/after_use"*^M
+  do^M
+    if [[ -f "${__hook}" && -x "${__hook}" && -s "${__hook}" ]]^M
+    then \. "${__hook}" || true^M
+    fi^M
+  done^M
+  unset __hook^M
+  if (( ${rvm_use_flag:=1} >= 1 )) # display automatically^M
+  then^M
+    if [[ $- == *i* ]] # check for interactive shells^M
+    then printf "%b" "Using: $(tput setaf 2 2>/dev/null)$GEM_HOME$(tput sgr0 2>/dev/null)\n" # show the user the ruby and gemset they are using in green^M
+    else printf "%b" "Using: $GEM_HOME\n" # don't use colors in non-interactive shells^M
+    fi^M
+  fi^M
+else^M
+  # If the environment file has not yet been created, use the RVM CLI to select.^M
+  rvm --create use  "$environment_id" || {^M
+    echo "Failed to create RVM environment '${environment_id}'."^M
+    return 1^M
+  }^M
+fi^M
+^M
+# If you use bundler, this might be useful to you:^M
+# if [[ -s Gemfile ]] && {^M
+#   ! builtin command -v bundle >/dev/null ||^M
+#   builtin command -v bundle | GREP_OPTIONS="" \command \grep $rvm_path/bin/bundle >/dev/null^M
+# }^M
+# then^M
+#   printf "%b" "The rubygem 'bundler' is not installed. Installing it now.\n"^M
+#   gem install bundler^M
+# fi^M
+# if [[ -s Gemfile ]] && builtin command -v bundle >/dev/null^M
+# then^M
+#   bundle install | GREP_OPTIONS="" \command \grep -vE '^Using|Your bundle is complete'^M
+# fi^M
+************************************************************************************************ Viewing of /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc complete.                            ************************************************************************************************* Trusting an .rvmrc file means that whenever you cd into this directory, RVM will run this   ** .rvmrc shell script.                                                                        ** Note that if the contents of the file change, you will be re-prompted to review the file    ** and adjust its trust settings. You may also change the trust settings manually at any time  ** with the 'rvm rvmrc' command.                                                               ************************************************************************************************y[es], n[o], v[iew], c[ancel]> y
+: command not found
+: command not found
+: command not found
+: command not found
+bash: /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc: line 22: syntax error in conditional expression
+'ash: /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc: line 23: syntax error near `]]
+bash: /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc: line 23: `  && -s "${rvm_path:-$HOME/.rvm}/environments/$environment'id" ]]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# cd ..
+root@MSISHADOW:/mnt/c/Sites/employtoy# cd EmployToyMain
+You are using '.rvmrc', it requires trusting, it is slower and it is not compatible with other ruby managers,
+you can switch to '.ruby-version' using 'rvm rvmrc to ruby-version'
+or ignore this warning with 'rvm rvmrc warning ignore /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc',
+'.rvmrc' will continue to be the default project file in RVM 1 and RVM 2,
+to ignore the warning for all files run 'rvm rvmrc warning ignore all.rvmrcs'.
+
+: command not found
+: command not found
+: command not found
+: command not found
+bash: /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc: line 22: syntax error in conditional expression
+'ash: /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc: line 23: syntax error near `]]
+bash: /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc: line 23: `  && -s "${rvm_path:-$HOME/.rvm}/environments/$environment'id" ]]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# ruby -v
+ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# echo "rvm use 2.0.0" > .rvmrc
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# ruby -v
+ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm use 2.0.0
+Using /usr/local/rvm/gems/ruby-2.0.0-p648
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# ruby -v
+ruby 2.0.0p648 (2015-12-16 revision 53162) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm use 2.0.0-p643@employee
+ruby-2.0.0-p643 is not installed.
+To install do: 'rvm install ruby-2.0.0-p643'
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm use 2.0.0-p643
+^C
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm install ruby-2.0.0-p643
+Searching for binary rubies, this might take some time.
+No binary rubies available for: ubuntu/14.04/x86_64/ruby-2.0.0-p643.
+Continuing with compilation. Please read 'rvm help mount' to get more information on binary rubies.
+Checking requirements for ubuntu.
+Requirements installation successful.
+Installing Ruby from source to: /usr/local/rvm/rubies/ruby-2.0.0-p643, this may take a while depending on your cpu(s)...
+ruby-2.0.0-p643 - #downloading ruby-2.0.0-p643, this may take a while depending on your connection...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10.2M  100 10.2M    0     0  4306k      0  0:00:02  0:00:02 --:--:-- 4307k
+ruby-2.0.0-p643 - #extracting ruby-2.0.0-p643 to /usr/local/rvm/src/ruby-2.0.0-p643....
+ruby-2.0.0-p643 - #applying patch /usr/local/rvm/patches/ruby/ssl_no_v3.patch.
+ruby-2.0.0-p643 - #configuring..................................................
+ruby-2.0.0-p643 - #post-configuration..
+ruby-2.0.0-p643 - #compiling................................................................................
+ruby-2.0.0-p643 - #installing..............................
+ruby-2.0.0-p643 - #making binaries executable..
+ruby-2.0.0-p643 - #downloading rubygems-2.4.8
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  437k  100  437k    0     0  1295k      0 --:--:-- --:--:-- --:--:-- 1301k
+ruby-2.0.0-p643 - #extracting rubygems-2.4.8....
+ruby-2.0.0-p643 - #removing old rubygems.........
+ruby-2.0.0-p643 - #installing rubygems-2.4.8......................
+ruby-2.0.0-p643 - #gemset created /usr/local/rvm/gems/ruby-2.0.0-p643@global
+ruby-2.0.0-p643 - #importing gemset /usr/local/rvm/gemsets/global.gems................................................
+ruby-2.0.0-p643 - #generating global wrappers........
+ruby-2.0.0-p643 - #gemset created /usr/local/rvm/gems/ruby-2.0.0-p643
+ruby-2.0.0-p643 - #importing gemsetfile /usr/local/rvm/gemsets/default.gems evaluated to empty gem list
+ruby-2.0.0-p643 - #generating default wrappers........
+ruby-2.0.0-p643 - #adjusting #shebangs for (gem irb erb ri rdoc testrb rake).
+Install of ruby-2.0.0-p643 - #complete
+WARNING: Please be aware that you just installed a ruby that is no longer maintained (2016-02-24), for a list of maintained rubies visit:
+
+    http://bugs.ruby-lang.org/projects/ruby/wiki/ReleaseEngineering
+
+Please consider upgrading to ruby-2.3.0 which will have all of the latest security patches.
+Ruby was built without documentation, to build it run: rvm docs generate-ri
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# ruby -v
+ruby 2.0.0p643 (2015-02-25 revision 49749) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# bundle install
+/usr/local/rvm/rubies/ruby-2.0.0-p643/lib/ruby/site_ruby/2.0.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- bundler (LoadError)
+        from /usr/local/rvm/rubies/ruby-2.0.0-p643/lib/ruby/site_ruby/2.0.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+        from /usr/bin/bundle:7:in `<main>'
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# ruby -v
+ruby 2.0.0p643 (2015-02-25 revision 49749) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rails -v
+/usr/lib/ruby/1.9.1/rubygems/dependency.rb:247:in `to_specs': Could not find railties (>= 0) amongst [bundler-unload-1.0.2, executable-hooks-1.3.2, gem-wrappers-1.2.7, rubygems-bundler-1.4.4, rvm-1.11.3.9] (Gem::LoadError)
+        from /usr/lib/ruby/1.9.1/rubygems/dependency.rb:256:in `to_spec'
+        from /usr/lib/ruby/1.9.1/rubygems.rb:1231:in `gem'
+        from /usr/local/bin/rails:22:in `<main>'
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# cd ..
+root@MSISHADOW:/mnt/c/Sites/employtoy# cd EmployToyMain
+You are using '.rvmrc', it requires trusting, it is slower and it is not compatible with other ruby managers,
+you can switch to '.ruby-version' using 'rvm rvmrc to ruby-version'
+or ignore this warning with 'rvm rvmrc warning ignore /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc',
+'.rvmrc' will continue to be the default project file in RVM 1 and RVM 2,
+to ignore the warning for all files run 'rvm rvmrc warning ignore all.rvmrcs'.
+
+********************************************************************************************************************
+* NOTICE                                                                                                           *
+********************************************************************************************************************
+* RVM has encountered a new or modified .rvmrc file in the current directory, this is a shell script and           *
+* therefore may contain any shell commands.                                                                        *
+*                                                                                                                  *
+* Examine the contents of this file carefully to be sure the contents are safe before trusting it!                 *
+* Do you wish to trust '/mnt/c/Sites/employtoy/EmployToyMain/.rvmrc'?                                              *
+* Choose v[iew] below to view the contents                                                                         *
+********************************************************************************************************************
+y[es], n[o], v[iew], c[ancel]> yes
+ruby-2.0.0-p643 - #gemset created /usr/local/rvm/gems/ruby-2.0.0-p643@employee
+ruby-2.0.0-p643 - #generating employee wrappers..........
+Using /usr/local/rvm/gems/ruby-2.0.0-p643 with gemset employee
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm -v
+rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# ruby -v
+ruby 2.0.0p643 (2015-02-25 revision 49749) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# bundle install
+/usr/local/rvm/rubies/ruby-2.0.0-p643/lib/ruby/site_ruby/2.0.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- bundler (LoadError)
+        from /usr/local/rvm/rubies/ruby-2.0.0-p643/lib/ruby/site_ruby/2.0.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+        from /usr/bin/bundle:7:in `<main>'
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# cd ..
+root@MSISHADOW:/mnt/c/Sites/employtoy# cd EmployToyMain
+You are using '.rvmrc', it requires trusting, it is slower and it is not compatible with other ruby managers,
+you can switch to '.ruby-version' using 'rvm rvmrc to ruby-version'
+or ignore this warning with 'rvm rvmrc warning ignore /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc',
+'.rvmrc' will continue to be the default project file in RVM 1 and RVM 2,
+to ignore the warning for all files run 'rvm rvmrc warning ignore all.rvmrcs'.
+
+Using: /usr/local/rvm/gems/ruby-2.0.0-p643@employee
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# gem env gemdir
+/usr/local/rvm/gems/ruby-2.0.0-p643@employee
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# which ruby
+/usr/local/rvm/rubies/ruby-2.0.0-p643/bin/ruby
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# bundler -v
+No command 'bundler' found, did you mean:
+ Command 'bundle' from package 'bundler' (universe)
+bundler: command not found
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# gem install bundler
+Fetching: bundler-1.13.6.gem (100%)
+Successfully installed bundler-1.13.6
+Parsing documentation for bundler-1.13.6
+Installing ri documentation for bundler-1.13.6
+1 gem installed
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# bundler -v
+Bundler version 1.13.6
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# bundle install
+Don't run Bundler as root. Bundler can ask for sudo if it is needed, and installing your bundle as root will break this application for
+all non-root users on this machine.
+
+[!] There was an error parsing `Gemfile`: syntax error, unexpected ':', expecting end-of-input - ...gem 'bcrypt-ruby', '~> 3.0.0' :require => 'bcrypt' # took ou...
+...                               ^. Bundler cannot continue.
+
+ #  from /mnt/c/Sites/employtoy/EmployToyMain/Gemfile:13
+ #  -------------------------------------------
+ #  gem 'activerecord-session_store'
+ >  gem 'bcrypt-ruby', '~> 3.0.0' :require => 'bcrypt' # took out the , '~> 3.0.0' version.. had issues not allowing rails server to run
+ #  gem 'jquery-rails'
+ #  -------------------------------------------
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# bundle install
+Don't run Bundler as root. Bundler can ask for sudo if it is needed, and installing your bundle as root will break this application for
+all non-root users on this machine.
+
+[!] There was an error parsing `Gemfile`: syntax error, unexpected ':', expecting end-of-input - gem 'bcrypt-ruby', '~> 3.0.0' :require => 'bcrypt'
+                               ^. Bundler cannot continue.
+
+ #  from /mnt/c/Sites/employtoy/EmployToyMain/Gemfile:13
+ #  -------------------------------------------
+ #  gem 'activerecord-session_store'
+ >  gem 'bcrypt-ruby', '~> 3.0.0' :require => 'bcrypt'
+ #  gem 'jquery-ui-rails'
+ #  -------------------------------------------
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# sudo bundle install
+sudo: unable to resolve host MSISHADOW
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/..
+Resolving dependencies......
+Using rake (10.4.2)
+Using i18n (0.6.11)
+Using minitest (4.7.5)
+Using multi_json (1.10.1)
+Using thread_safe (0.3.4)
+Using tzinfo (0.3.42)
+Using activesupport (4.0.0)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.0)
+Using mime-types (1.25.1)
+Using polyglot (0.3.5)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.0)
+Using activemodel (4.0.0)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.0)
+Using thor (0.19.1)
+Using railties (4.0.0)
+Using activerecord-session_store (0.1.0)
+Using addressable (2.3.6)
+Using appsignal (0.10.6)
+Using bcrypt-ruby (3.0.1)
+Using coderay (1.1.0)
+Installing better_errors (2.0.0)
+Gem::InstallError: better_errors requires Ruby version >= 2.0.0.
+An error occurred while installing better_errors (2.0.0), and Bundler cannot continue.
+Make sure that `gem install better_errors -v '2.0.0'` succeeds before bundling.
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# gem install better_errors -v '2.0.0'
+Fetching: rack-2.0.1.gem (100%)
+ERROR:  Error installing better_errors:
+        rack requires Ruby version >= 2.2.2.
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm list
+
+rvm rubies
+
+=> ruby-2.0.0-p643 [ x86_64 ]
+   ruby-2.0.0-p648 [ x86_64 ]
+ * ruby-2.3.0 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain#
+
+-------------------------------------------------------------
+-------------------------------------------------------------
+************************* DAY 2 *****************************
+-------------------------------------------------------------
+-------------------------------------------------------------
+
+Using actionmailer (4.0.0)
+Using activemodel (4.0.0)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.0)
+Using thor (0.19.1)
+Using railties (4.0.0)
+Using activerecord-session_store (0.1.0)
+Using addressable (2.3.6)
+Using appsignal (0.10.6)
+Using bcrypt-ruby (3.0.1)
+Using debug_inspector (0.0.2)
+Using binding_of_caller (0.7.2)
+Using sass (3.2.19)
+Using bootstrap-sass (3.0.3.0)
+Using bower-rails (0.9.2)
+Using braintree (2.33.1)
+Using bundler (1.3.5)
+Using json (1.8.1)
+Using carrierwave (0.10.0)
+Using coffee-script-source (1.8.0)
+Using execjs (2.2.2)
+Using coffee-script (2.3.0)
+Using coffee-rails (4.0.1)
+Installing debase-ruby_core_source (0.9.3)
+Gem::InstallError: debase-ruby_core_source requires Ruby version ~> 2.0.
+An error occurred while installing debase-ruby_core_source (0.9.3), and Bundler
+cannot continue.
+Make sure that `gem install debase-ruby_core_source -v '0.9.3'` succeeds before
+bundling.
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm list
+
+rvm rubies
+
+=> ruby-2.0.0-p643 [ x86_64 ]
+   ruby-2.0.0-p648 [ x86_64 ]
+ * ruby-2.3.0 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# gem install debase
+Building native extensions.  This could take a while...
+/usr/local/rvm/rubies/ruby-2.0.0-p643/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:73: warning: Insecure world writable dir /usr/local/rvm/gems in PATH, mode 042777
+Successfully installed debase-0.2.1
+Parsing documentation for debase-0.2.1
+Installing ri documentation for debase-0.2.1
+Done installing documentation for debase after 5 seconds
+1 gem installed
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# sudo bundle install
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/..
+Resolving dependencies.......
+Using rake (10.4.2)
+Using i18n (0.6.11)
+Using minitest (4.7.5)
+Using multi_json (1.10.1)
+Using thread_safe (0.3.4)
+Using tzinfo (0.3.42)
+Using activesupport (4.0.0)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.0)
+Using mime-types (1.25.1)
+Using polyglot (0.3.5)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.0)
+Using activemodel (4.0.0)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.0)
+Using thor (0.19.1)
+Using railties (4.0.0)
+Using activerecord-session_store (0.1.0)
+Using addressable (2.3.6)
+Using appsignal (0.10.6)
+Using bcrypt-ruby (3.0.1)
+Using debug_inspector (0.0.2)
+Using binding_of_caller (0.7.2)
+Using sass (3.2.19)
+Using bootstrap-sass (3.0.3.0)
+Using bower-rails (0.9.2)
+Using braintree (2.33.1)
+Using bundler (1.3.5)
+Using json (1.8.1)
+Using carrierwave (0.10.0)
+Using coffee-script-source (1.8.0)
+Using execjs (2.2.2)
+Using coffee-script (2.3.0)
+Using coffee-rails (4.0.1)
+Installing debase-ruby_core_source (0.9.3)
+Gem::InstallError: debase-ruby_core_source requires Ruby version ~> 2.0.
+An error occurred while installing debase-ruby_core_source (0.9.3), and Bundler
+cannot continue.
+Make sure that `gem install debase-ruby_core_source -v '0.9.3'` succeeds before
+bundling.
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm reinstall 2.0.0-p643 --disable-binary
+ruby-2.0.0-p643 - #removing src/ruby-2.0.0-p643..
+ruby-2.0.0-p643 - #removing rubies/ruby-2.0.0-p643..
+Checking requirements for ubuntu.
+Requirements installation successful.
+Installing Ruby from source to: /usr/local/rvm/rubies/ruby-2.0.0-p643, this may take a while depending on your cpu(s)...
+ruby-2.0.0-p643 - #downloading ruby-2.0.0-p643, this may take a while depending on your connection...
+ruby-2.0.0-p643 - #extracting ruby-2.0.0-p643 to /usr/local/rvm/src/ruby-2.0.0-p643....
+ruby-2.0.0-p643 - #applying patch /usr/local/rvm/patches/ruby/ssl_no_v3.patch.
+ruby-2.0.0-p643 - #configuring..................................................
+ruby-2.0.0-p643 - #post-configuration..
+ruby-2.0.0-p643 - #compiling................................................................................
+ruby-2.0.0-p643 - #installing..............................
+ruby-2.0.0-p643 - #making binaries executable..
+ruby-2.0.0-p643 - #downloading rubygems-2.4.8
+ruby-2.0.0-p643 - #extracting rubygems-2.4.8.....
+ruby-2.0.0-p643 - #removing old rubygems.........
+ruby-2.0.0-p643 - #installing rubygems-2.4.8......................
+ruby-2.0.0-p643 - #gemset created /usr/local/rvm/gems/ruby-2.0.0-p643@global
+ruby-2.0.0-p643 - #importing gemset /usr/local/rvm/gemsets/global.gems................................................
+ruby-2.0.0-p643 - #generating global wrappers........
+ruby-2.0.0-p643 - #gemset created /usr/local/rvm/gems/ruby-2.0.0-p643
+ruby-2.0.0-p643 - #importing gemsetfile /usr/local/rvm/gemsets/default.gems evaluated to empty gem list
+ruby-2.0.0-p643 - #generating default wrappers........
+ruby-2.0.0-p643 - #adjusting #shebangs for (gem irb erb ri rdoc testrb rake).
+Install of ruby-2.0.0-p643 - #complete
+WARNING: Please be aware that you just installed a ruby that is no longer maintained (2016-02-24), for a list of maintained rubies visit:
+
+    http://bugs.ruby-lang.org/projects/ruby/wiki/ReleaseEngineering
+
+Please consider upgrading to ruby-2.3.0 which will have all of the latest security patches.
+Ruby was built without documentation, to build it run: rvm docs generate-ri
+Making gemset ruby-2.0.0-p643 pristine...........................................................
+Making gemset ruby-2.0.0-p643@employee pristine............................................................Building nokogiri using packaged libraries.
+Building libxml2-2.8.0 for nokogiri with the following patches applied:
+        - 0001-Fix-parser-local-buffers-size-problems.patch
+        - 0002-Fix-entities-local-buffers-size-problems.patch
+        - 0003-Fix-an-error-in-previous-commit.patch
+        - 0004-Fix-potential-out-of-bound-access.patch
+        - 0005-Detect-excessive-entities-expansion-upon-replacement.patch
+        - 0006-Do-not-fetch-external-parsed-entities.patch
+        - 0007-Enforce-XML_PARSER_EOF-state-handling-through-the-pa.patch
+        - 0008-Improve-handling-of-xmlStopParser.patch
+        - 0009-Fix-a-couple-of-return-without-value.patch
+        - 0010-Keep-non-significant-blanks-node-in-HTML-parser.patch
+        - 0011-Do-not-fetch-external-parameter-entities.patch
+************************************************************************
+IMPORTANT!  Nokogiri builds and uses a packaged version of libxml2.
+
+If this is a concern for you and you want to use the system library
+instead, abort this installation process and reinstall nokogiri as
+follows:
+
+    gem install nokogiri -- --use-system-libraries
+
+If you are using Bundler, tell it to use the option:
+
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+
+However, note that nokogiri does not necessarily support all versions
+of libxml2.
+
+For example, libxml2-2.9.0 and higher are currently known to be broken
+and thus unsupported by nokogiri, due to compatibility problems and
+XPath optimization bugs.
+************************************************************************
+Building libxslt-1.1.28 for nokogiri with the following patches applied:
+        - 0001-Adding-doc-update-related-to-1.1.28.patch
+        - 0002-Fix-a-couple-of-places-where-f-printf-parameters-wer.patch
+        - 0003-Initialize-pseudo-random-number-generator-with-curre.patch
+        - 0004-EXSLT-function-str-replace-is-broken-as-is.patch
+        - 0006-Fix-str-padding-to-work-with-UTF-8-strings.patch
+        - 0007-Separate-function-for-predicate-matching-in-patterns.patch
+        - 0008-Fix-direct-pattern-matching.patch
+        - 0009-Fix-certain-patterns-with-predicates.patch
+        - 0010-Fix-handling-of-UTF-8-strings-in-EXSLT-crypto-module.patch
+        - 0013-Memory-leak-in-xsltCompileIdKeyPattern-error-path.patch
+        - 0014-Fix-for-bug-436589.patch
+        - 0015-Fix-mkdir-for-mingw.patch
+************************************************************************
+IMPORTANT!  Nokogiri builds and uses a packaged version of libxslt.
+
+If this is a concern for you and you want to use the system library
+instead, abort this installation process and reinstall nokogiri as
+follows:
+
+    gem install nokogiri -- --use-system-libraries
+
+If you are using Bundler, tell it to use the option:
+
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+************************************************************************
+....
+Making gemset ruby-2.0.0-p643@global pristine............................................................
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# sudo bundle install
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/..
+Resolving dependencies........
+Using rake (10.4.2)
+Using i18n (0.6.11)
+Using minitest (4.7.5)
+Using multi_json (1.10.1)
+Using thread_safe (0.3.4)
+Using tzinfo (0.3.42)
+Using activesupport (4.0.0)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.0)
+Using mime-types (1.25.1)
+Using polyglot (0.3.5)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.0)
+Using activemodel (4.0.0)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.0)
+Using thor (0.19.1)
+Using railties (4.0.0)
+Using activerecord-session_store (0.1.0)
+Using addressable (2.3.6)
+Using appsignal (0.10.6)
+Using bcrypt-ruby (3.0.1)
+Using debug_inspector (0.0.2)
+Using binding_of_caller (0.7.2)
+Using sass (3.2.19)
+Using bootstrap-sass (3.0.3.0)
+Using bower-rails (0.9.2)
+Using braintree (2.33.1)
+Using bundler (1.3.5)
+Using json (1.8.1)
+Using carrierwave (0.10.0)
+Using coffee-script-source (1.8.0)
+Using execjs (2.2.2)
+Using coffee-script (2.3.0)
+Using coffee-rails (4.0.1)
+Installing debase-ruby_core_source (0.9.3)
+Gem::InstallError: debase-ruby_core_source requires Ruby version ~> 2.0.
+An error occurred while installing debase-ruby_core_source (0.9.3), and Bundler
+cannot continue.
+Make sure that `gem install debase-ruby_core_source -v '0.9.3'` succeeds before
+bundling.
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# sudo ruby -v
+ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvum list
+No command 'rvum' found, did you mean:
+ Command 'rvim' from package 'vim-nox' (universe)
+ Command 'rvim' from package 'vim-tiny' (main)
+ Command 'rvim' from package 'vim-gnome' (main)
+ Command 'rvim' from package 'vim' (main)
+ Command 'rvim' from package 'vim-athena' (universe)
+ Command 'rvim' from package 'vim-gtk' (universe)
+ Command 'rvu' from package 'radiance' (universe)
+rvum: command not found
+^C
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvm list
+
+rvm rubies
+
+=> ruby-2.0.0-p643 [ x86_64 ]
+   ruby-2.0.0-p648 [ x86_64 ]
+ * ruby-2.3.0 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# sudo rvm list
+sudo: rvm: command not found
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# sudorvm list
+sudorvm: command not found
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rvmsudo list
+Warning: `secure_path` found in `/etc/sudoers`, falling back to call via `/usr/bin/env`, this breaks rules from `/etc/sudoers`. Run:
+
+    export rvmsudo_secure_path=1
+
+to avoid the warning, put it in shell initialization file to make it persistent.
+/usr/bin/env: list: No such file or directory
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# ruby -v
+ruby 2.0.0p643 (2015-02-25 revision 49749) [x86_64-linux]
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain#
+
+
+************************************************************************
+
+
+
+The program 'psql' can be found in the following packages:
+ * postgresql-client-common
+ * postgres-xc-client
+Try: apt-get install <selected package>
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# cd ../../..
+root@MSISHADOW:/mnt/c# ls /user/local/var/postgres
+ls: cannot access /user/local/var/postgres: No such file or directory
+root@MSISHADOW:/mnt/c# locate /postgres
+locate: can not stat () `/var/lib/mlocate/mlocate.db': No such file or directory
+root@MSISHADOW:/mnt/c# grep server.log
+^C
+root@MSISHADOW:/mnt/c# tail /usr/local/var/postgres/server.log
+tail: cannot open ‘/usr/local/var/postgres/server.log’ for reading: No such file or directory
+root@MSISHADOW:/mnt/c# tail /usr/var/postgres/server.log
+tail: cannot open ‘/usr/var/postgres/server.log’ for reading: No such file or directory
+root@MSISHADOW:/mnt/c# tail -f log/development.log
+tail: cannot open ‘log/development.log’ for reading: No such file or directory
+tail: cannot watch ‘log/development.log’: Invalid argument
+root@MSISHADOW:/mnt/c# cd Sites/employtoy/EmployToyMain
+You are using '.rvmrc', it requires trusting, it is slower and it is not compatible with other ruby managers,
+you can switch to '.ruby-version' using 'rvm rvmrc to ruby-version'
+or ignore this warning with 'rvm rvmrc warning ignore /mnt/c/Sites/employtoy/EmployToyMain/.rvmrc',
+'.rvmrc' will continue to be the default project file in RVM 1 and RVM 2,
+to ignore the warning for all files run 'rvm rvmrc warning ignore all.rvmrcs'.
+
+Using: /usr/local/rvm/gems/ruby-2.0.0-p643@employee
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# gem install pg -v '0.18.1'
+Building native extensions.  This could take a while...
+/usr/local/rvm/rubies/ruby-2.0.0-p643/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:73: warning: Insecure world writable dir /usr/local/rvm/gems in PATH, mode 042777
+Successfully installed pg-0.18.1
+invalid options: -f fivefish
+(invalid options are ignored)
+Parsing documentation for pg-0.18.1
+Done installing documentation for pg after 8 seconds
+1 gem installed
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# rails server
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2016-11-18 12:51:37] INFO  WEBrick 1.3.1
+[2016-11-18 12:51:37] INFO  ruby 2.0.0 (2015-02-25) [x86_64-linux]
+[2016-11-18 12:51:37] INFO  WEBrick::HTTPServer#start: pid=12400 port=3000
+2016-11-18 12:51:51 -0500 severity=DEBUG, 2016-11-18 12:51:51 -0500 severity=DEBUG, 2016-11-18 12:51:51 -0500 severity=INFO, Started GET "/" for 127.0.0.1 at 2016-11-18 12:51:51 -05002016-11-18 12:51:56 -0500 severity=FATAL, PG::ConnectionBad (could not connect to server: Connection refused
+        Is the server running on host "localhost" (127.0.0.1) and accepting
+        TCP/IP connections on port 5432?
+):
+  appsignal (0.10.6) lib/appsignal/rack/listener.rb:13:in `call'
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p643@employee/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p643@employee/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p643@employee/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p643@employee/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (213.9ms)
+^C[2016-11-18 12:52:16] INFO  going to shutdown ...
+[2016-11-18 12:52:16] INFO  WEBrick::HTTPServer#start done.
+Exiting
+root@MSISHADOW:/mnt/c/Sites/employtoy/EmployToyMain# cd ../../..
+root@MSISHADOW:/mnt/c# sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+root@MSISHADOW:/mnt/c# wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+OK
+root@MSISHADOW:/mnt/c# sudo apt-get update
+Get:1 http://apt.postgresql.org trusty-pgdg InRelease [46.5 kB]
+Get:2 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:3 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Hit http://archive.ubuntu.com trusty-backports InRelease
+Hit http://archive.ubuntu.com trusty Release.gpg
+Hit http://archive.ubuntu.com trusty Release
+Get:4 http://apt.postgresql.org trusty-pgdg/main amd64 Packages [67.2 kB]
+Get:5 http://archive.ubuntu.com trusty-updates/main amd64 Packages [918 kB]
+Get:6 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [16.4 kB]
+Ign http://apt.postgresql.org trusty-pgdg/main Translation-en_US
+Ign http://apt.postgresql.org trusty-pgdg/main Translation-en
+Get:7 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [388 kB]
+Get:8 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [14.0 kB]
+Hit http://archive.ubuntu.com trusty-updates/main Translation-en
+Hit http://archive.ubuntu.com trusty-updates/multiverse Translation-en
+Hit http://archive.ubuntu.com trusty-updates/restricted Translation-en
+Get:9 http://security.ubuntu.com trusty-security/main amd64 Packages [547 kB]
+Hit http://archive.ubuntu.com trusty-updates/universe Translation-en
+Hit http://archive.ubuntu.com trusty-backports/main amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/restricted amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/universe amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/main Translation-en
+Get:10 http://security.ubuntu.com trusty-security/restricted amd64 Packages [13.3 kB]
+Hit http://archive.ubuntu.com trusty-backports/multiverse Translation-en
+Hit http://archive.ubuntu.com trusty-backports/restricted Translation-en
+Get:11 http://security.ubuntu.com trusty-security/universe amd64 Packages [144 kB]
+Hit http://archive.ubuntu.com trusty-backports/universe Translation-en
+Hit http://archive.ubuntu.com trusty/main amd64 Packages
+Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+Get:12 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4,138 B]
+Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://security.ubuntu.com trusty-security/main Translation-en
+Hit http://archive.ubuntu.com trusty/multiverse amd64 Packages
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en
+Hit http://security.ubuntu.com trusty-security/universe Translation-en
+Hit http://archive.ubuntu.com trusty/main Translation-en
+Hit http://archive.ubuntu.com trusty/multiverse Translation-en
+Hit http://archive.ubuntu.com trusty/restricted Translation-en
+Hit http://archive.ubuntu.com trusty/universe Translation-en
+Ign http://archive.ubuntu.com trusty/main Translation-en_US
+Ign http://archive.ubuntu.com trusty/multiverse Translation-en_US
+Ign http://archive.ubuntu.com trusty/restricted Translation-en_US
+Ign http://archive.ubuntu.com trusty/universe Translation-en_US
+Fetched 2,290 kB in 23s (96.5 kB/s)
+Reading package lists... Done
+root@MSISHADOW:/mnt/c# sudo apt-get install postgresql postgresql-contrib
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  os-prober
+Use 'apt-get autoremove' to remove it.
+The following extra packages will be installed:
+  libpq-dev libpq5 libsensors4 pgdg-keyring postgresql-9.6
+  postgresql-client-9.6 postgresql-client-common postgresql-common
+  postgresql-contrib-9.6 ssl-cert sysstat
+Suggested packages:
+  postgresql-doc-9.6 lm-sensors postgresql-doc locales-all libdbd-pg-perl
+  openssl-blacklist isag
+The following NEW packages will be installed:
+  libsensors4 pgdg-keyring postgresql postgresql-9.6 postgresql-client-9.6
+  postgresql-client-common postgresql-common postgresql-contrib
+  postgresql-contrib-9.6 ssl-cert sysstat
+The following packages will be upgraded:
+  libpq-dev libpq5
+2 upgraded, 11 newly installed, 0 to remove and 29 not upgraded.
+Need to get 6,804 kB of archives.
+After this operation, 28.9 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main libpq-dev amd64 9.6.1-1.pgdg14.04+1 [210 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main libsensors4 amd64 1:3.3.4-2ubuntu1 [27.2 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main ssl-cert all 1.0.33 [16.6 kB]
+Get:4 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main libpq5 amd64 9.6.1-1.pgdg14.04+1 [128 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main sysstat amd64 10.2.0-1 [283 kB]
+Get:6 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main pgdg-keyring all 2014.1 [5,898 B]
+Get:7 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main postgresql-client-common all 177.pgdg14.04+1 [78.0 kB]
+Get:8 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main postgresql-client-9.6 amd64 9.6.1-1.pgdg14.04+1 [1,213 kB]
+Get:9 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main postgresql-common all 177.pgdg14.04+1 [215 kB]
+Get:10 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main postgresql-9.6 amd64 9.6.1-1.pgdg14.04+1 [4,022 kB]
+Get:11 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main postgresql all 9.6+177.pgdg14.04+1 [54.9 kB]
+Get:12 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main postgresql-contrib-9.6 amd64 9.6.1-1.pgdg14.04+1 [496 kB]
+Get:13 http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg/main postgresql-contrib all 9.6+177.pgdg14.04+1 [54.9 kB]
+Fetched 6,804 kB in 7s (970 kB/s)
+Preconfiguring packages ...
+(Reading database ... 56806 files and directories currently installed.)
+Preparing to unpack .../libpq-dev_9.6.1-1.pgdg14.04+1_amd64.deb ...
+Unpacking libpq-dev (9.6.1-1.pgdg14.04+1) over (9.3.15-0ubuntu0.14.04) ...
+Preparing to unpack .../libpq5_9.6.1-1.pgdg14.04+1_amd64.deb ...
+Unpacking libpq5:amd64 (9.6.1-1.pgdg14.04+1) over (9.3.15-0ubuntu0.14.04) ...
+Selecting previously unselected package libsensors4:amd64.
+Preparing to unpack .../libsensors4_1%3a3.3.4-2ubuntu1_amd64.deb ...
+Unpacking libsensors4:amd64 (1:3.3.4-2ubuntu1) ...
+Selecting previously unselected package pgdg-keyring.
+Preparing to unpack .../pgdg-keyring_2014.1_all.deb ...
+Unpacking pgdg-keyring (2014.1) ...
+Selecting previously unselected package postgresql-client-common.
+Preparing to unpack .../postgresql-client-common_177.pgdg14.04+1_all.deb ...
+Unpacking postgresql-client-common (177.pgdg14.04+1) ...
+Selecting previously unselected package postgresql-client-9.6.
+Preparing to unpack .../postgresql-client-9.6_9.6.1-1.pgdg14.04+1_amd64.deb ...
+Unpacking postgresql-client-9.6 (9.6.1-1.pgdg14.04+1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../ssl-cert_1.0.33_all.deb ...
+Unpacking ssl-cert (1.0.33) ...
+Selecting previously unselected package postgresql-common.
+Preparing to unpack .../postgresql-common_177.pgdg14.04+1_all.deb ...
+Adding 'diversion of /usr/bin/pg_config to /usr/bin/pg_config.libpq-dev by postgresql-common'
+Unpacking postgresql-common (177.pgdg14.04+1) ...
+Selecting previously unselected package postgresql-9.6.
+Preparing to unpack .../postgresql-9.6_9.6.1-1.pgdg14.04+1_amd64.deb ...
+Unpacking postgresql-9.6 (9.6.1-1.pgdg14.04+1) ...
+Selecting previously unselected package postgresql.
+Preparing to unpack .../postgresql_9.6+177.pgdg14.04+1_all.deb ...
+Unpacking postgresql (9.6+177.pgdg14.04+1) ...
+Selecting previously unselected package postgresql-contrib-9.6.
+Preparing to unpack .../postgresql-contrib-9.6_9.6.1-1.pgdg14.04+1_amd64.deb ...
+Unpacking postgresql-contrib-9.6 (9.6.1-1.pgdg14.04+1) ...
+Selecting previously unselected package postgresql-contrib.
+Preparing to unpack .../postgresql-contrib_9.6+177.pgdg14.04+1_all.deb ...
+Unpacking postgresql-contrib (9.6+177.pgdg14.04+1) ...
+Selecting previously unselected package sysstat.
+Preparing to unpack .../sysstat_10.2.0-1_amd64.deb ...
+Unpacking sysstat (10.2.0-1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up libpq5:amd64 (9.6.1-1.pgdg14.04+1) ...
+Setting up libpq-dev (9.6.1-1.pgdg14.04+1) ...
+Setting up libsensors4:amd64 (1:3.3.4-2ubuntu1) ...
+Setting up pgdg-keyring (2014.1) ...
+Removing apt.postgresql.org key from trusted.gpg: OK
+Importing apt.postgresql.org key: OK
+Setting up postgresql-client-common (177.pgdg14.04+1) ...
+Setting up postgresql-client-9.6 (9.6.1-1.pgdg14.04+1) ...
+update-alternatives: using /usr/share/postgresql/9.6/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up ssl-cert (1.0.33) ...
+Setting up postgresql-common (177.pgdg14.04+1) ...
+Adding user postgres to group ssl-cert
+
+Creating config file /etc/postgresql-common/createcluster.conf with new version
+
+Creating config file /etc/logrotate.d/postgresql-common with new version
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+  en_us
+Removing obsolete dictionary files:
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+runlevel:/var/run/utmp: No such file or directory
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up sysstat (10.2.0-1) ...
+
+Creating config file /etc/default/sysstat with new version
+update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up postgresql-9.6 (9.6.1-1.pgdg14.04+1) ...
+Creating new cluster 9.6/main ...
+  config /etc/postgresql/9.6/main
+  data   /var/lib/postgresql/9.6/main
+  locale en_US.UTF-8
+FATAL:  could not create shared memory segment: Function not implemented
+DETAIL:  Failed system call was shmget(key=1, size=56, 03600).
+child process exited with exit code 1
+initdb: removing contents of data directory "/var/lib/postgresql/9.6/main"
+Error: initdb failed
+Error: could not create default cluster. Please create it manually with
+
+  pg_createcluster 9.6 main --start
+
+or a similar command (see 'man pg_createcluster').
+update-alternatives: using /usr/share/postgresql/9.6/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+runlevel:/var/run/utmp: No such file or directory
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up postgresql (9.6+177.pgdg14.04+1) ...
+Setting up postgresql-contrib-9.6 (9.6.1-1.pgdg14.04+1) ...
+Setting up postgresql-contrib (9.6+177.pgdg14.04+1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.9) ...
+root@MSISHADOW:/mnt/c# sudo su - postgres
+postgres@MSISHADOW:~$ psql
+psql: could not connect to server: No such file or directory
+        Is the server running locally and accepting
+        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+postgres@MSISHADOW:~$ postgres-# \conninfo
+postgres-#: command not found
+postgres@MSISHADOW:~$ sudo apt-get update
+[sudo] password for postgres:
+Sorry, try again.
+[sudo] password for postgres:
+Sorry, try again.
+[sudo] password for postgres:
+Sorry, try again.
+sudo: 3 incorrect password attempts
+postgres@MSISHADOW:~$ postgres-# \conninfo
+postgres-#: command not found
+postgres@MSISHADOW:~$ \conninfo
+conninfo: command not found
+postgres@MSISHADOW:~$ /q
+-su: /q: No such file or directory
+postgres@MSISHADOW:~$ psql
+psql: could not connect to server: No such file or directory
+        Is the server running locally and accepting
+        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+postgres@MSISHADOW:~$ \q
+q: command not found
+postgres@MSISHADOW:~$ sudo -i -u postgres
+sudo: setresuid() [107, 107, 107] -> [-1, 0, -1]: Operation not permitted
+postgres@MSISHADOW:~$ \q
+q: command not found
+postgres@MSISHADOW:~$
