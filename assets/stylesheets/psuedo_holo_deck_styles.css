@@ -148,11 +148,11 @@ Extra code below... may throw away...
 These were all prior attempts to achieve the above result(s) :D 
 --------------------------------------------------------------------------------------------------
 */
-
+/*
 .holodeck {
 	width: 100%;
 	height: 100%;
-	/*background-color: black;*/
+	background-color: black;
 }
 
 .wall {
@@ -187,21 +187,79 @@ These were all prior attempts to achieve the above result(s) :D
 .left-square {
 	height: 400px;
 	width: 400px;
-	/*vertical-align: 25%;*/
-	/*float: left;*/
+	vertical-align: 25%;
+	float: left;
 	background-color: red;
 }
 .middle-square {
 	height: 400px;
 	width: 400px;
-	/*vertical-align: 25%;*/
-	/*vertical-align: center;*/
+	vertical-align: 25%;
+	vertical-align: center;
 	background-color: green;
 }
 .right-square {
 	height: 400px;
 	width: 400px;
-	/*vertical-align: 25%;*/
-	/*float: right;*/
+	vertical-align: 25%;
+	float: right;
 	background-color: blue;
+}*/
+
+
+.wrap {
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+}
+.cube {
+	position: relative;
+	left: 40%;
+	/*bottom: 50%;*/
+	width: 200px;
+	transform-style: preserve-3d;
+}
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	font-size: 40px;
+}
+.back {
+	transform: translateZ(-100px) rotateX(-180deg);
+	background-color: green;
+}
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+	background-color: blue;
+}
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+	background-color: red;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+	background-color: yellow;
+}
+.bottom {
+	transform: rotateX(270deg) translateY(100px);
+	transform-origin: bottom center;
+	background-color: gray;
+}
+.front {
+	transform: translateZ(100px);
+	background-color: orange;
+	opacity: 0.5;
+}
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+.cube {
+	animation: spin 5s infinite linear;
 }

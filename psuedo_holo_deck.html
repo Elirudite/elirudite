@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Elijah's Holodeck Prototype</title>
@@ -28,10 +29,6 @@
 	<div class="holodeck-box3-middle-window"></div>
 	<div class="holodeck-box3-border"></div>
 	<div class="holodeck-box3-floor"></div>
-	<button onClick="moreShapes()">Create Shapes</button>
-	<div id="canvases">
-		<canvas id="customtriangle" width="1000" height="500"></canvas>
-	</div>
 
 	<!-- <div class="holodeck">
 
@@ -46,6 +43,23 @@
 		<div class="wall col-md-12" id="floor"> </div>
 
 	</div> -->
+
+	<div class="wrap">
+		<div class="cube">
+			<div class="front">front</div>
+			<div class="back">back</div>
+			<div class="top">top</div>
+			<div class="bottom">bottom</div>
+			<div class="left">left</div>
+			<div class="right">right</div>
+		</div>
+	</div>
+
+	<button onClick="moreShapes()">Create Shapes</button>
+	<div id="canvases">
+		<canvas id="customtriangle" width="1000" height="500"></canvas>
+	</div>
+
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
