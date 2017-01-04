@@ -5,13 +5,15 @@
 		<title>Holodeck Prototype 2.0</title>
 		<meta name="description" content="Holodeck Protoype 2.0">
 		<script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+		<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+  	<script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
 	</head>
 	<body>
 		<a-scene>
 
 			<a-assets>
 				<img id="wall_pic_left" src="assets/images/epiclandscapebg3.jpg">
-				<img id="wall_pic_right" src="assets/images/lab.jpg">
+				<img id="wall_pic_right" src="assets/images/research_lab.jpg">
 				<img id="background" src="assets/images/starsmovingsimple.gif">
 			</a-assets>
 
@@ -23,9 +25,9 @@
 				<a-image position="-1.9 2 0" rotation="0 90 0" width="2" height="2" scale="1 1 1" src="#wall_pic_left"></a-image>
 			<a-plane rotation="0 0 0" position="0 2 -2" width="4" height="4" color="yellow"></a-plane>
 
-			<a-sky src="#background"></a-sky>
+			<a-sky material="shader:gif;src:#background;" gif=""></a-sky>
 
-			<a-entity position="0 0 3.8">
+			<a-entity position="0 2 3.8">
 				<a-camera></a-camera>
 			</a-entity>
 
