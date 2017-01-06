@@ -37,23 +37,29 @@
 			<a-plane rotation="0 90 0" position="-2 2 0" width="4" height="4" color="green"></a-plane>
 				<a-image position="-1.9 2 0" rotation="0 90 0" width="3" height="3" scale="1 1 1" src="#wall_pic_left"></a-image>
 
+			<a-entity geometry="primitive: cylinder; segmentsRadial: 6; radius: 0.5;" radius="0.2"></a-entity>
+
 			<!-- ====================== ROOM 2 ======================= -->
 
 			<!-- backwall -->
 			<a-plane rotation="0 0 0" position="5 2 -2" width="6" height="4" color="yellow"></a-plane>
-			<a-sphere position="5 2 -1" geometry.segmentsWidth="24" geometry.segmentsHeight="8" color="blue"></a-sphere>
-			<!-- <a-image position="4 2 -1.2" width="2.5" height="3.5" scale="0.4 0.4 0.4" src="#wall_pic_back2"></a-image> -->
+			<a-cylinder position="5 2 -4" rotation="0 -90 0" theta-length="180" height="3" radius="3" material="side: double" color="black"></a-cylinder>
 
 			<!-- floor -->
-			<a-plane position="5 0 0" rotation="-90 0 0" width="6" height="4" color="black"></a-plane>
+			<a-plane position="5 0 0" rotation="-90 0 0" width="6" height="4" color="brown"></a-plane>
 
 			<!-- right wall -->
-			<a-plane rotation="0 -90 0" position="8 2 0" width="4" height="4" color="red"></a-plane>
-			<!-- <a-image position="1.9 2 0" rotation="0 -90 0" width="3" height="3" scale="1 1 1" src="#wall_pic_right"></a-image> -->
+			<a-plane rotation="0 -90 0" position="8 2 1" width="2" height="4" color="red"></a-plane>
+			<a-plane rotation="0 -90 0" position="8 3 0" width="2" height="2" color="red"></a-plane>
+			<a-plane rotation="0 -90 0" position="8 2 -1.5" width="1" height="4" color="red"></a-plane>
 
 			<!-- left wall -->
 			<a-plane rotation="0 90 0" position="2 2 0" width="4" height="4" color="green"></a-plane>
-				<!-- <a-image position="-1.9 2 0" rotation="0 90 0" width="3" height="3" scale="1 1 1" src="#wall_pic_left"></a-image> -->
+
+			<!-- ====================== ROOM 2 ======================= -->
+
+			
+
 
 
 		<!-- sky/background -->
