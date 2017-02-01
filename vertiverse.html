@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Holodeck Prototype 2.5</title>
+	<meta name="description" content="Holodeck Protoype 2.5">
+	<script src="https://aframe.io/releases/0.4.0/aframe.js"></script>
+	<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+	<script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+</head>
+<body>
+<a-scene editor>
+
+		<a-assets>
+			<img id="wall_pic_left" src="assets/images/possiblebg2.jpg">
+			<img id="wall_pic_right" src="assets/images/research_lab.png">
+			<img id="wall_pic_back" src="assets/images/bpfist.png">
+			<img id="background1" src="assets/images/starstwinklingdope.gif">
+			<img id="background2" src="assets/images/starsmovingsimple.gif">
+			<img id="background3" src="assets/images/360Startrails.jpg">
+			<img id="patio" src="assets/images/space_patio.jpg">
+			<img id="showcase" src="assets/images/futurism.jpg">
+
+		</a-assets>
+
+<!-- ====================== ROOM 1 ======================= -->
+
+			<!-- backwall -->
+			<a-plane rotation="0 0 0" position="0 2 -2" width="4" height="4" color="yellow"></a-plane>
+			<a-sphere position="0 2 -2.5" radius="1.25" color="blue"></a-sphere>
+			<a-image position="0 2 -1.2" width="2.5" height="3.5" scale="0.4 0.4 0.4" src="#wall_pic_back"></a-image>
+
+			<!-- floor -->
+			<a-plane rotation="-90 0 0" width="4" height="4" color="white"></a-plane>
+
+			<!-- right wall -->
+			<a-plane rotation="0 -90 0" position="2 2 0" width="4" height="4" color="red"></a-plane>
+			<a-image position="1.9 2 0" rotation="0 -90 0" width="3" height="3" scale="1 1 1" src="#wall_pic_right"></a-image>
+
+			<!-- left wall -->
+			<a-plane rotation="0 90 0" position="-2 2 0" width="4" height="4" color="green"></a-plane>
+				<a-image position="-1.9 2 0" rotation="0 90 0" width="3" height="3" scale="1 1 1" src="#wall_pic_left"></a-image>
+
+			<a-entity geometry="primitive: cylinder; segmentsRadial: 6; radius: 0.5;" radius="0.2"></a-entity>
+
+<!-- ====================== ROOM 2 ======================= -->
+
+			<!-- backwall -->
+			<a-plane rotation="0 0 0" position="5 2 -2" width="6" height="4" color="yellow"></a-plane>
+			<a-cylinder position="5 2 -4" rotation="0 -90 0" theta-length="180" height="3" radius="3" material="side: double" color="black"></a-cylinder>
+
+			<!-- floor -->
+			<a-plane position="5 0 0" rotation="-90 0 0" width="6" height="4" color="brown"></a-plane>
+
+			<!-- right wall -->
+			<a-plane rotation="0 -90 0" position="8 2 1" width="2" height="4" color="red"></a-plane>
+			<a-plane rotation="0 -90 0" position="8 3 0" width="2" height="2" color="red"></a-plane>
+			<a-plane rotation="0 -90 0" position="8 2 -1.5" width="1" height="4" color="red"></a-plane>
+
+			<!-- left wall -->
+			<a-plane rotation="0 90 0" position="2 2 0" width="4" height="4" color="green"></a-plane>
+
+<!-- ====================== ROOM 3 ======================= -->
+
+			<!-- backwall -->
+			<a-plane rotation="0 0 0" position="11 2 -2" width="6" height="4" color="black"></a-plane>
+			<!-- 	<a-cylinder position="5 2 -4" rotation="0 -90 0" theta-length="180" height="3" radius="3" material="side: double" color="black"></a-cylinder> -->
+
+			<!-- floor -->
+			<a-plane position="11 0 0" rotation="-90 0 0" width="6" height="4" color="blue"></a-plane>
+
+			<!-- right wall -->
+			<a-plane rotation="0 -90 0" position="14 2 1" width="2" height="4" color="purple"></a-plane>
+			<a-plane rotation="0 -90 0" position="14 3 0" width="2" height="2" color="orange"></a-plane>
+			<a-plane rotation="0 -90 0" position="14 2 -1.5" width="1" height="4" color="red"></a-plane>
+
+			<!-- left wall -->
+			<a-plane rotation="0 90 0" position="8 2 0" width="4" height="4" color="green"></a-plane>
+
+<!-- ====================== ROOM 4 ======================= -->
+
+			<!-- backwall -->
+			<a-plane rotation="0 0 0" position="-10 2.1 -2" width="6" height="4" color="purple"></a-plane>
+			<a-cylinder position="-10 2 -5" rotation="0 -90 0" theta-length="180" height="3" radius="3.5" material="side: double" color="black"></a-cylinder>
+
+			<!-- floor -->
+			<a-plane position="-10 0 -5" rotation="-90 0 0" width="16" height="20" color="blue"></a-plane>
+
+			<!-- right side -->
+			<a-plane rotation="0 -90 0" position="-5 2.1 2" width="4" height="4" color="purple"></a-plane>
+			<a-plane rotation="0 90 0" position="-5 2.1 2" width="4" height="4" color="purple"></a-plane>
+
+			<!-- right door -->
+			<a-plane rotation="0 -45 0" position="-5 2.1 0" width="2" height="4" color="purple"></a-plane>
+			<a-plane rotation="0 -45 0" position="-6 3.1 -1" width="2" height="2" color="purple"></a-plane>
+			<a-plane rotation="0 -45 0" position="-7 2.1 -2" width="1" height="4" color="purple"></a-plane>
+			<a-curvedimage position="-3 .9 2" rotation="0 -90 0" height="3" radius="3" theta-length="75" theta-start="332" scale="1 1 1" src="#wall_pic_right"></a-curvedimage>
+			<!-- right hall -->
+			<a-plane rotation="0 -90 0" position="-5 2.1 -2.5" width="5" height="4" color="purple"></a-plane>
+			<a-plane rotation="0 90 0" position="-5 2.1 -2.5" width="5" height="4" color="purple"></a-plane>
+
+			<!-- left side -->
+			<a-plane rotation="0 90 0" position="-15 2.1 2" width="4" height="4" color="purple"></a-plane>
+			<a-plane rotation="0 -90 0" position="-15 2.1 2" width="4" height="4" color="purple"></a-plane>
+
+			<!-- left door -->
+			<a-plane rotation="0 45 0" position="-15 2.1 0" width="2" height="4" color="purple"></a-plane>
+			<a-plane rotation="0 45 0" position="-14 3.1 -1" width="2" height="2" color="purple"></a-plane>
+			<a-plane rotation="0 45 0" position="-13 2.1 -2" width="1" height="4" color="purple"></a-plane>
+			<a-image position="-14.9 2 2" rotation="0 90 0" width="3" height="3" radius="3" theta-length="72" theta-start="345" scale="1 1 1" src="#wall_pic_left"></a-image>
+			<!-- left hall -->
+			<a-plane rotation="0 90 0" position="-15 2.1 -2.5" width="5" height="4" color="purple"></a-plane>
+			<a-plane rotation="0 -90 0" position="-15 2.1 -2.5" width="5" height="4" color="purple"></a-plane>
+
+<!-- ====================== ROOM 5 ======================= -->
+
+			<!-- back -->
+			<!-- <a-cylinder position="-10 2 -10" rotation="0 90 0" theta-length="180" height="3" radius="3.5" material="side: double" color="black"></a-cylinder> -->
+			<a-curvedimage position="-10 2.1 -12" rotation="0 0 0" width="10" height="4" radius="5" theta-start="90" theta-length="180" scale="1 2 .5" src="#patio"></a-curvedimage>
+			<!-- right -->
+			<a-cylinder position="-5.1 2.1 -8.5" rotation="0 0 0" theta-length="180" height="4" radius="3.5" material="side: double" color="white"></a-cylinder>
+			<!-- left -->
+			<a-cylinder position="-14.9 2.1 -8.5" rotation="0 180 0" theta-length="180" height="4" radius="3.5" material="side: double" color="white"></a-cylinder>
+			<!-- top -->
+			<a-curvedimage position="-10 4.1 -17" rotation="90 0 0" width="10" height="20" radius="5" theta-start="90" theta-length="180" scale="1 1 .5" src="#background3"></a-curvedimage>
+			
+
+
+
+			<!-- ============================================== big room ============================================================= --> 
+
+			<!-- backwall -->
+			<a-plane position="-30 2 -2" rotation="0 0 0" width="6" height="3" color="purple"></a-plane>
+			<a-cylinder position="-30 2 -5" rotation="0 -90 0" theta-length="180" height="3" radius="3.5" material="side: double" color="black"></a-cylinder>
+
+			<!-- floor -->
+			<a-plane position="-30 0 -5" rotation="-90 0 0" width="20" height="20" color="purple"></a-plane>
+
+			<!-- cieling -->
+			<a-plane position="-30 4 -5" rotation="90 0 0" width="20" height="20" color="purple"></a-plane>
+
+			<!-- right side -->
+			<a-plane position="-24.5 2 2" rotation="0 -90 0" width="3" height="3" color="purple"></a-plane>
+			<a-plane position="-24.5 2 2" rotation="0 90 0" width="3" height="3" color="purple"></a-plane>
+			<a-curvedimage position="-24.2 2 2" rotation="0 -120 0" width="1" height="1" radius="1" theta-length="100" theta-start="340" scale=".5 1 1" src="#wall_pic_right"></a-curvedimage>
+			<a-entity position="-24.1 2 2" rotation="45 0 90" geometry="primitive: cylinder; segmentsRadial: 4; radius: 1.6; open-ended: true; depth: .1" material="color: black; side: double"></a-entity>
+			<!-- right door -->
+			<a-plane position="-25 2 0" rotation="0 -45 0" width="2" height="3" color="purple"></a-plane>
+			<a-plane position="-26 3 -1" rotation="0 -45 0" width="2" height="1" color="purple"></a-plane>
+			<a-plane position="-27 2 -2" rotation="0 -45 0" width="1" height="3" color="purple"></a-plane>
+
+			<!-- left side -->
+			<a-plane position="-34 2 -1"  rotation="0 45 0" width="4" height="3" color="purple"></a-plane>
+			<a-plane position="-34 2 -1"  rotation="0 -135 0" width="4" height="3" color="purple"></a-plane>
+			<a-image position="-34.15 2 -.7" rotation="0 45 0" width="1.5" height="1" scale="1.3 1.5 1.5" src="#wall_pic_left"></a-image>
+			<a-entity position="-34.5 2 -1.1" rotation="45 -45 90" geometry="primitive: cylinder; segmentsRadial: 4; radius: 1.6; open-ended: true; depth: .1" material="color: black; side: double"></a-entity>
+			<a-plane position="-35.4 2 1.9" rotation="0 -90 0" width="3" height="3" color="purple"></a-plane>
+			<a-plane position="-35.4 2 1.9" rotation="0 90 0" width="3" height="3" color="purple"></a-plane>
+
+			<!-- middle showcase -->
+			<a-entity position="-30 .1 .5" rotation="0 0 0" geometry="primitive: box; width: 1; height: 1; depth: 1" material="color: red"></a-entity>
+			<a-cylinder position="-30 1 .6" rotation="0 90 0" radius="0.5" color="gray" opacity="0.2" material="side: double" theta-length="180" ></a-cylinder>
+			<a-image position="-30 1 .6" rotation="0 0 0" width=".5" height=".5" scale="1 1.5 1" src="#showcase"></a-image>
+
+			<!-- other room(space-n-time ship) -->
+			<a-image position="-25 2 -3" rotation="0 0 0" width="4" height="3" scale="1 1 1" material="shader:gif;src:#background2;" gif=""></a-image>
+
+
+
+
+<!-- ============================================== spacetime box ============================================================= --> 
+
+			<!-- backwall -->
+			<a-image position="-82 2 -1.5" width="1.5" height="1" scale="1.3 1.5 1.5" src="#wall_pic_back"></a-image>
+			<a-entity position="-82 2 -2" rotation="45 90 90" geometry="primitive: cylinder; segmentsRadial: 4; radius: 2; open-ended: true; depth: .1" material="color: black; side: double"></a-entity>
+
+			<!-- right side -->
+			<a-curvedimage position="-78.2 2 1.7" rotation="0 -120 0" width="1" height="1" radius="1" theta-length="100" theta-start="340" scale=".5 1 1" src="#lab"></a-curvedimage>
+			<a-entity position="-78.2 2 1.4" rotation="45 0 90" geometry="primitive: cylinder; segmentsRadial: 4; radius: 2; open-ended: true; depth: .1" material="color: black; side: double"></a-entity>
+			<!-- right door -->
+			<a-image position="-79.9 2 -0.5" rotation="0 -45 0" width="1.5" height="1" scale="1.3 1.5 1.5" src="#wall_pic_left"></a-image>
+			<a-entity position="-79.5 2 -0.8" rotation="-45 45 90" geometry="primitive: cylinder; segmentsRadial: 4; radius: 2; open-ended: true; depth: .1" material="color: black; side: double"></a-entity>
+
+			<!-- left side -->
+			<a-image position="-84.15 2 -.7" rotation="0 45 0" width="1.5" height="1" scale="1.3 1.5 1.5" src="#wall_pic_right"></a-image>
+			<a-entity position="-84.5 2 -0.9" rotation="45 -45 90" geometry="primitive: cylinder; segmentsRadial: 4; radius: 2; open-ended: true; depth: .1" material="color: black; side: double"></a-entity>
+
+			<!-- sky background -->
+			<a-entity position="-82.3 2 2.5" rotation="0 -25 0" geometry="primitive: cylinder; segmentsRadial: 8; radius: 4.7; open-ended: false; height:10" material="side: double; shader: gif; src: #background2;" gif=""></a-entity>
+
+
+<!-- ============================================== examples of boxes ============================================================= --> 
+			<a-entity position="-62.3 2 2.5" rotation="0 -25 0" geometry="primitive: cylinder; segmentsRadial: 8; radius: 4.7; open-ended: false; height:10" material="side: double; shader: gif; src: #background1;" gif=""></a-entity>
+
+			<a-entity position="-72.3 2 -7.5" rotation="0 -25 0" geometry="primitive: cylinder; segmentsRadial: 8; radius: 4.7; open-ended: false; height:10" material="side: double; src: #background3"></a-entity>
+
+			<a-entity position="-52.3 2 17.5" rotation="0 -25 0" geometry="primitive: cylinder; segmentsRadial: 5; radius: 4.7; open-ended: false; height:10" material="side: double; src: #showcase"></a-entity>
+
+			<a-entity position="-80 2 80" rotation="0 -25 0" geometry="primitive: cylinder; segmentsRadial: 5; radius: 4.7; open-ended: false; height:10" material="side: double; src: #patio"></a-entity>
+
+			<a-entity position="-800 2 80" rotation="0 -25 0" geometry="primitive: cylinder; segmentsRadial: 5; radius: 4.7; open-ended: false; height:10" material="side: double; src: #patio"></a-entity>
+
+
+
+
+
+
+		
+		<!-- sky/background -->
+		<a-sky></a-sky>
+		<!-- <a-sky material="shader:gif;src:#background2;" gif=""></a-sky> -->
+
+		<!-- camera/user -->
+		<a-entity position="-10 0 3.8">
+			<a-camera></a-camera>
+		</a-entity>
+
+	</a-scene>
+
+
+
+</body>
+</html>
